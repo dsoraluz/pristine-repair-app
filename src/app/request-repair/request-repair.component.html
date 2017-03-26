@@ -90,13 +90,27 @@
   <div class="row">
     <h2> Location and Contact Info </h2>
 
-    <!-- <div class="selection-list" *ngFor="let oneDate of availableDays"> -->
+          <form (ngSubmit)="submitRequest(myForm)" #myForm="ngForm">
+            <h2>Location </h2>
+            <p> County *
+              <input type="text" name="coutny" [(ngModel)]="county" required />
+            </p>
+            <p> City *
+              <input type="text" name="city" [(ngModel)]="city" required />
+            </p>
 
-      <!-- <div *ngIf="oneDate.getHour().toString() > {{ openTime }} ">
-
-      </div> -->
-      <button (click)="submitRequest()"> Confirm Contact Info </button>
-    <!-- </div> -->
+            <h2>Contact Info</h2>
+            <p> Name *
+              <input type="text" name="name" [(ngModel)]="name" required />
+            </p>
+            <p> Email *
+              <input type="text" name="email" [(ngModel)]="email" required />
+            </p>
+            <p> Email *
+              <input type="text" name="email" [(ngModel)]="email" required />
+            </p>
+            <button type="submit"> Confirm Location and Contact Info </button>
+          </form>
   </div>
 </div>
 
