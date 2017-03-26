@@ -178,7 +178,8 @@ export class RequestRepairComponent implements OnInit {
     this.requestedTime = selectedTime;
   }
 
-  submitRequest(){
+  submitRequest(myForm){
+    console.log(myForm);
     console.log ("A pristine specialist will reach out to you shortly!")
   }
 
