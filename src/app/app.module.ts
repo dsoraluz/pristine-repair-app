@@ -14,12 +14,16 @@ import { TechService } from './services/tech-service/tech.service';
 import { RequestRepairComponent } from './request-repair/request-repair.component';
 
 import { KeysPipe } from './pipes/keys.pipe';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RequestRepairComponent,
-    KeysPipe
+    KeysPipe,
+    LandingPageComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

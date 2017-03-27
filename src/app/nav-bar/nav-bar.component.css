@@ -1,0 +1,39 @@
+#logo {
+
+}
+
+#repair-button {
+  margin-top: 1%;
+  margin-left: 37%;
+  background-color: green;
+  width: 300px;
+  padding: 15px;
+  border-radius: 8px;
+  border-color: green;
+  color: white;
+  font-size: 20px;
+
+}
+
+#login {
+  margin-top: 1%;
+  margin-left: 37%;
+  background-color: teal;
+  padding: 15px;
+  border-radius: 8px;
+  border-color: green;
+  color: white;
+  font-size: 20px;
+}
+
+#phone-number {
+  color: white;
+  font-size: 20px;
+  margin-left: 1%;
+}
+
+.header {
+  background-color: black;
+  border-color: red;
+  height: 80px;
+}

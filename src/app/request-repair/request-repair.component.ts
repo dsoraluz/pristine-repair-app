@@ -62,6 +62,7 @@ export class RequestRepairComponent implements OnInit {
   selectDateBoolean: boolean = false;
   selectTimeBoolean: boolean = false;
   locationAndContactBoolean: boolean = false;
+  verificationBoolean: boolean = false;
 
   //Variables to hold repair query results.
   devices: Array<Object> = [];
@@ -179,6 +180,9 @@ export class RequestRepairComponent implements OnInit {
   }
 
   submitRequest(myForm){
+
+    this.locationAndContactBoolean = false;
+    this.verificationBoolean = true;
     console.log(myForm);
     console.log ("A pristine specialist will reach out to you shortly!")
   }
