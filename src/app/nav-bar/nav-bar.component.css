@@ -1,5 +1,5 @@
-#logo {
-
+#logo img {
+  width: 100%;
 }
 
 #repair-button {
@@ -17,18 +17,18 @@
 
 #login {
   margin-top: 1%;
-  margin-left: 37%;
+  margin-left: 15%;
   background-color: teal;
   padding: 15px;
   border-radius: 8px;
   border-color: green;
   color: white;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 #phone-number {
   color: white;
-  font-size: 20px;
+  font-size: 30px;
   margin-left: 1%;
 }
 
