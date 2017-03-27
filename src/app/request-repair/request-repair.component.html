@@ -6,15 +6,17 @@
       Device: <strong><span  id="request-info">{{ deviceName }} </span></strong>
       <strong><span id="request-info">{{ model}}</span></strong>
       Color: <strong><span id="request-info">{{ color }} </span></strong>
+      <a [routerLink] = "['repair']"> Edit </a>
     </div>
 
     <div id="request-info" class="col-4">
       Issue: <strong><span id="request-info">{{ repairType }} </span></strong>
       Cost: <strong><span id="request-info">${{ repairCost }} </span></strong>
+      <a [routerLink] = "['repair']"> Edit </a>
     </div>
 
     <div id="request-info" class="col-3">
-      When: <strong><span id="request-info">{{ requestedDate | date : "MMM d" }}, {{ requestedTime }} </span></strong>
+      When: <strong><span id="request-info">{{ requestedDate | date : "MMM d," }} {{ requestedTime }} </span></strong>
     </div>
 
   </div>
@@ -39,11 +41,24 @@
 
 <div *ngIf="selectModelBoolean">
   <div class="row">
-    <h1> Select Your Device </h1>
-    <div class="selection-list">
-      <div *ngFor="let oneDevice of devices">
-        <button (click)="getColors(oneDevice._id, oneDevice.model)"> {{ oneDevice.model }}</button>
+    <div id="progress-bar-complete-25">
     </div>
+  </div>
+  <div class="row">
+    <h1> Select Your Device </h1>
+    <hr />
+    <div class="col-3">
+
+    </div>
+    <div class="col-6">
+      <div class="selection-list">
+        <div *ngFor="let oneDevice of devices">
+          <button (click)="getColors(oneDevice._id, oneDevice.model)"> {{ oneDevice.model }}</button>
+      </div>
+      </div>
+    </div>
+    <div class="col-2">
+
     </div>
   </div>
 </div>
@@ -51,46 +66,101 @@
 
 <div *ngIf="selectColorBoolean">
   <div class="row">
-    <h1> Select Your Color </h1>
-    <div class="selection-list" *ngFor="let oneColor of colors">
-      <button (click)="getRepairs(oneColor)"> {{ oneColor }}</button>
+    <div id="progress-bar-complete-25">
     </div>
+  </div>
+  <div class="row">
+    <h1> Select Your Color </h1>
+    <hr />
+    <div class="col-3">
+
+    </div>
+    <div class="col-6">
+      <div class="selection-list" *ngFor="let oneColor of colors">
+        <button (click)="getRepairs(oneColor)"> {{ oneColor }}</button>
+      </div>
+  </div>
+  <div class="col-2">
+
+  </div>
   </div>
 </div>
 
 <div *ngIf="selectRepairBoolean">
   <div class="row">
+    <div id="progress-bar-complete-50">
+    </div>
+  </div>
+  <div class="row">
     <h1> Select Your Repair </h1>
-    <div class="selection-list" *ngFor="let oneRepair of repairs | keys">
-      <button (click)="selectDate()"> {{oneRepair.value}} </button>
+    <hr />
+    <div class="col-3">
+
+    </div>
+    <div class="col-6">
+      <div class="selection-list" *ngFor="let oneRepair of repairs | keys">
+        <button (click)="selectDate()"> {{oneRepair.value}} </button>
+      </div>
+    </div>
+    <div class="col-2">
+
     </div>
   </div>
 </div>
 
 <div *ngIf="selectDateBoolean">
   <div class="row">
+    <div id="progress-bar-complete-75">
+    </div>
+  </div>
+  <div class="row">
     <h1> Select Repair Date </h1>
-    <div class="selection-list" *ngFor="let oneDate of availableDays">
-      <button (click)="selectTime(oneDate)"> {{oneDate | date : "EEEE MMM d"}} </button>
+    <hr />
+    <div class="col-3">
+
+    </div>
+    <div class="col-6">
+      <div class="selection-list" *ngFor="let oneDate of availableDays">
+        <button (click)="selectTime(oneDate)"> {{oneDate | date : "EEEE MMM d"}} </button>
+      </div>
+    </div>
+    <div class="col-2">
+
     </div>
   </div>
 </div>
 
 <div *ngIf="selectTimeBoolean">
   <div class="row">
+    <div id="progress-bar-complete-75">
+    </div>
+  </div>
+  <div class="row">
     <h1> Select a time </h1>
+    <hr />
+    <div class="col-3">
 
-    <div class="selection-list" *ngFor="let oneTime of availableTimes">
+    </div>
+    <div class="col-6">
+      <div class="selection-list" *ngFor="let oneTime of availableTimes">
 
-      <!-- <div *ngIf="oneDate.getHour().toString() > {{ openTime }} ">
+        <!-- <div *ngIf="oneDate.getHour().toString() > {{ openTime }} ">
 
       </div> -->
-      <button (click)="provideLocAndCon(oneTime)"> {{oneTime}} </button>
+        <button (click)="provideLocAndCon(oneTime)"> {{oneTime}} </button>
+      </div>
+    </div>
+    <div class="col-2">
+
     </div>
   </div>
 </div>
 
 <div *ngIf="locationAndContactBoolean">
+  <div class="row">
+    <div id="progress-bar-complete-75">
+    </div>
+  </div>
     <div class="row">
       <div class="col-3">
 
@@ -136,7 +206,11 @@
 
 <div *ngIf="verificationBoolean">
   <div class="row">
-    <h1> Thank You For your Request </h1>
+    <div id="progress-bar-complete-100">
+    </div>
+  </div>
+  <div class="row">
+    <h1> Thank You For Your Request </h1>
     <h3> Your details were sent successfully! A Pristine Specialist will get back to you shortly</h3>
   </div>
 </div>

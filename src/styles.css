@@ -5,6 +5,11 @@
   padding: 0;
 }
 
+:root {
+  --logo-blue: #11ABD8;
+  --logo-green: #89C23E ;
+}
+
 
 
 .col-1 {width: 8.33%;}

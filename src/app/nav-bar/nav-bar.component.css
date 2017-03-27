@@ -18,7 +18,7 @@
 #login {
   margin-top: 1%;
   margin-left: 15%;
-  background-color: teal;
+  background-color: var(--logo-blue);
   padding: 15px;
   border-radius: 8px;
   border-color: green;

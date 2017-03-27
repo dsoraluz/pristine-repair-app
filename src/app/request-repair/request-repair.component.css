@@ -24,7 +24,29 @@ button {
 
 #request-info {
   text-align: left;
+  font-size: 20;
 }
+
+#progress-bar-complete-25, #progress-bar-complete-50, #progress-bar-complete-75 , #progress-bar-complete-100 {
+  float: left;
+  height: 10px;
+  background-color: green;
+}
+
+#progress-bar-complete-25{
+  width: 25%;
+}
+#progress-bar-complete-50{
+  width: 50%;
+}
+#progress-bar-complete-75{
+  width: 75%;
+}
+#progress-bar-complete-100{
+  width: 100%;
+}
+
+
 
 #location-form, #contact-form {
 }
