@@ -16,6 +16,8 @@ import { RequestRepairComponent } from './request-repair/request-repair.componen
 import { KeysPipe } from './pipes/keys.pipe';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FooterComponent } from './footer/footer.component';
+import { FeaturedOnComponent } from './featured-on/featured-on.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     RequestRepairComponent,
     KeysPipe,
     LandingPageComponent,
-    NavBarComponent
+    NavBarComponent,
+    FooterComponent,
+    FeaturedOnComponent
   ],
   imports: [
     BrowserModule,

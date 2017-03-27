@@ -1,13 +1,36 @@
-#green-speech {
-  float: right;
-  margin-right: 25%;
+/*#crack-container {
+  height: 3px;
+
+  position: absolute;
+}*/
+
+#crack {
+  height: 89%;
+  width: 100%;
+  position: absolute;
 }
 
 #blue-speech {
-  float: left;
-  margin-left: 25%;
+  float: right;
+  margin-top: 5%;
+  margin-right: 10%;
+  width: 50%;
 }
 
+#green-speech {
+  float: left;
+  margin-top: 5%;
+  margin-left: 10%;
+  width: 50%;
+}
+
+#green-speech > img {
+  width: 100%;
+  margin-bottom: 30%;
+}
+#blue-speech > img {
+  width: 100%;
+}
 
 .fullscreen-bg {
     position: fixed;
