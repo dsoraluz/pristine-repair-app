@@ -9,18 +9,19 @@ export class KeysPipe implements PipeTransform {
     let keys4 = [];
 
     for (let key in value) {
-      keys.push({key: value[key]});
+      keys.push({key: key, value: value[key]});
+      console.log("keys",keys);
+      console.log("values", value);
     }
-    // console.log("keys",keys);
 
-    for (let key in keys) {
-      // console.log('keys', keys[key]);
-      keys2.push({value: keys[key]});
-      keys3.push(keys2[key]);
-      console.log('keys2', value[key]);
-      console.log('Keys3', keys3);
-
-    }
+    // for (let key in keys) {
+    //   // console.log('keys', keys[key]);
+    //   keys2.push({value: keys[key]});
+    //   keys3.push(keys2[key]);
+    //   console.log('keys2', value[key]);
+    //   console.log('Keys3', keys3);
+    //
+    // }
 
     // for (let key in keys2){
     //   keys3.push(keys2[key]);
@@ -33,6 +34,6 @@ export class KeysPipe implements PipeTransform {
     //   console.log(keys4);
     //
     // }
-    return keys3;
+    return keys;
   }
 }

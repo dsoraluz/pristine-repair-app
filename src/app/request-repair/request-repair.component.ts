@@ -17,7 +17,7 @@ export class RequestRepairComponent implements OnInit {
 
   queryResult: Array<Object> = [];
 
-  //Used to store the I'd of the device chosen. (for further query purposes)
+  //Used to store the ID of the device chosen. (for further query purposes)
   modelId: String;
 
 
@@ -68,21 +68,34 @@ export class RequestRepairComponent implements OnInit {
   devices: Array<Object> = [];
   models: Array<Object> = [];
   colors: Array<Object> = [];
-  repairs: Array<Object> = [];
+  repairTypes: Array<String> = [];
+  repairCosts: Array<Number> = [];
 
   //Variables to hold repair information
-  customer: String;
-  location: String;
+  // customer: String;
+  // location: String;
   deviceName: String = 'iPhone';
   model: String;
   color: String;
-  repairType: String = 'Screen';
+  repairType: String;
   repairCost: String = '100';
   requestedDate: Date;
   requestedTime: String;
 
+  firstName: String;
+  email: String;
+  phone: String;
+  county: String;
+  city: String;
 
-  constructor(private myDeviceService: DeviceService) { }
+  //Object variable that will hold all request details to send to api.
+  requestInfo: Object;
+
+
+  constructor(
+    private myDeviceService: DeviceService,
+    private myRepairDetailService : RepairDetailService
+  ) { }
 
   ngOnInit() {
     this.selectModelBoolean = true;
@@ -139,29 +152,47 @@ export class RequestRepairComponent implements OnInit {
       this.errorMessage = "Could not retrieve color details. Try again later."
     });
 
+    this.getRepairCost();
 
   }
 
 
-  getRepairs(selectedColor){
+  getRepairType(selectedColor, selectedRepairCost){
+
     this.selectColorBoolean = false;
     this.selectRepairBoolean = true;
 
     this.color = selectedColor
+    // this.repairCost = selectedRepairCost;
 
-    this.myDeviceService.getRepairs(this.modelId)
-    .then((theRepairs)=>{
-      this.repairs = theRepairs.repair;
-      console.log(this.repairs);
+    this.myDeviceService.getRepairType(this.modelId)
+    .then((theRepairTypes)=>{
+      this.repairTypes = theRepairTypes;
+      console.log(this.repairTypes);
     })
     .catch((err)=>{
       this.errorMessage = "Could not retrieve  details. Try again later."
     });
   }
 
-  selectDate(selectedRepair){
+  getRepairCost(){
+
+    this.myDeviceService.getRepairCost(this.modelId)
+    .then((theRepairCosts)=>{
+      this.repairCosts = theRepairCosts;
+      console.log(this.repairCosts);
+    })
+    .catch((err)=>{
+      this.errorMessage = "Could not retrieve  details. Try again later."
+    });
+  }
+
+
+  selectDate(selectedRepairType){
     this.selectRepairBoolean = false;
     this.selectDateBoolean = true;
+
+    this.repairType = selectedRepairType;
   }
 
   selectTime(selectedDate){
@@ -179,11 +210,48 @@ export class RequestRepairComponent implements OnInit {
     this.requestedTime = selectedTime;
   }
 
-  submitRequest(myForm){
+  generateRequestInfo(){
+    this.requestInfo = {
+      firstName: this.firstName,
+      email: this.email,
+      phone: this.phone,
+      county: this.county,
+      city: this.city,
+      device: this.deviceName,
+      model: this.model,
+      color: this.color,
+      repairType: this.repairType,
+      repairCost: this.repairCost,
+      requestedDate: this.requestedDate,
+      requestedTime: this.requestedTime
+    };
+
+    console.log(this.requestInfo);
+  }
+
+  submitRequest(selectedCounty, selectedCity, enteredFirstName, enteredEmail, enteredPhone){
+
 
     this.locationAndContactBoolean = false;
     this.verificationBoolean = true;
-    console.log(myForm);
+
+    this.firstName = enteredFirstName;
+    this.email = enteredEmail;
+    this.phone = enteredPhone;
+
+    this.county = selectedCounty;
+    this.city = selectedCity;
+
+    this.generateRequestInfo();
+
+    this.myRepairDetailService.sendDetails(this.requestInfo)
+    .then((repairCreated)=>{
+      console.log(repairCreated);
+    })
+    .catch((err)=>{
+      this.errorMessage = "Could not create request. Try again later."
+    });
+
     console.log ("A pristine specialist will reach out to you shortly!")
   }
 

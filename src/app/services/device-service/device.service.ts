@@ -27,8 +27,14 @@ export class DeviceService {
     .then(apiResponse => apiResponse.json())
   }
 
-  getRepairs(id){
-    return this.myHttp.get(`${this.BASE_URL}/api/devices/${id}/repairs`)
+  getRepairType(id){
+    return this.myHttp.get(`${this.BASE_URL}/api/devices/${id}/repairType`)
+    .toPromise()
+    .then(apiResponse => apiResponse.json())
+  }
+
+  getRepairCost(id){
+    return this.myHttp.get(`${this.BASE_URL}/api/devices/${id}/repairCost`)
     .toPromise()
     .then(apiResponse => apiResponse.json())
   }

@@ -77,7 +77,7 @@
     </div>
     <div class="col-6">
       <div class="selection-list" *ngFor="let oneColor of colors">
-        <button (click)="getRepairs(oneColor)"> {{ oneColor }}</button>
+        <button (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
       </div>
   </div>
   <div class="col-2">
@@ -98,8 +98,8 @@
 
     </div>
     <div class="col-6">
-      <div class="selection-list" *ngFor="let oneRepair of repairs | keys">
-        <button (click)="selectDate()"> {{oneRepair.value}} </button>
+      <div class="selection-list" *ngFor="let oneRepairType of repairTypes.repairType">
+        <button (click)="selectDate(oneRepairType)"> {{oneRepairType}} </button>
       </div>
     </div>
     <div class="col-2">
@@ -121,6 +121,7 @@
     </div>
     <div class="col-6">
       <div class="selection-list" *ngFor="let oneDate of availableDays">
+        <!-- <button *ngIf="oneDate === currentDate" (click)="selectTime(oneDate)">Today</button> -->
         <button (click)="selectTime(oneDate)"> {{oneDate | date : "EEEE MMM d"}} </button>
       </div>
     </div>
@@ -166,7 +167,7 @@
 
       </div>
       <div class="col-6">
-        <form (ngSubmit)="submitRequest(myForm)" #myForm="ngForm">
+        <form (ngSubmit)="submitRequest(county, city, name, email, phone)" #myForm="ngForm">
           <div id="location-form">
             <h1>Location </h1>
             <div> County *
