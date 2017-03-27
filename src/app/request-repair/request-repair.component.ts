@@ -78,7 +78,7 @@ export class RequestRepairComponent implements OnInit {
   model: String;
   color: String;
   repairType: String;
-  repairCost: String = '100';
+  repairCost: Number = 100;
   requestedDate: Date;
   requestedTime: String;
 
@@ -86,7 +86,7 @@ export class RequestRepairComponent implements OnInit {
   email: String;
   phone: String;
   county: String;
-  city: String;
+  area: String;
 
   //Object variable that will hold all request details to send to api.
   requestInfo: Object;
@@ -216,7 +216,7 @@ export class RequestRepairComponent implements OnInit {
       email: this.email,
       phone: this.phone,
       county: this.county,
-      city: this.city,
+      area: this.area,
       device: this.deviceName,
       model: this.model,
       color: this.color,
@@ -229,7 +229,7 @@ export class RequestRepairComponent implements OnInit {
     console.log(this.requestInfo);
   }
 
-  submitRequest(selectedCounty, selectedCity, enteredFirstName, enteredEmail, enteredPhone){
+  submitRequest(selectedCounty, selectedArea, enteredFirstName, enteredEmail, enteredPhone){
 
 
     this.locationAndContactBoolean = false;
@@ -240,7 +240,7 @@ export class RequestRepairComponent implements OnInit {
     this.phone = enteredPhone;
 
     this.county = selectedCounty;
-    this.city = selectedCity;
+    this.area = selectedArea;
 
     this.generateRequestInfo();
 

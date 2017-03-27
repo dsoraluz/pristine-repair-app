@@ -167,7 +167,7 @@
 
       </div>
       <div class="col-6">
-        <form (ngSubmit)="submitRequest(county, city, name, email, phone)" #myForm="ngForm">
+        <form (ngSubmit)="submitRequest(county, area, name, email, phone)" #myForm="ngForm">
           <div id="location-form">
             <h1>Location </h1>
             <div> County *
@@ -176,10 +176,10 @@
                 <option value="Broward"></option>
                 <option value="Miami"></option>
               </select> -->
-              <input type="dropdown" name="coutny" [(ngModel)]="county" required />
+              <input type="dropdown" name="county" [(ngModel)]="county" required />
             </div>
-            <div> City *
-              <input type="dropdown" name="city" [(ngModel)]="city" required />
+            <div> Area *
+              <input type="dropdown" name="area" [(ngModel)]="area" required />
             </div>
 
           </div>
