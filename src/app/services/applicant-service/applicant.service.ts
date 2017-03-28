@@ -12,7 +12,7 @@ export class ApplicantService {
   sendApplication(applicationInfo){
     const headers = new Headers({'Content-Type': "application/json"});
     const options = { headers: headers};
-    return this.myHttp.post(`${this.BASE_URL}/apply`, applicationInfo, options)
+    return this.myHttp.post(`${this.BASE_URL}/api/apply`, applicationInfo, options)
     .toPromise()
     .then(myApiString => myApiString.json());
   }

@@ -8,7 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 //--------------- SERVICES ---------------------------------------------
-import {SessionService} from './services/session-service/session.service';
+import { ApplicantService } from './services/applicant-service/applicant.service';
+import { SessionService } from './services/session-service/session.service';
 import { DeviceService } from './services/device-service/device.service';
 import { RepairDetailService } from './services/repair-detail-service/repair-detail.service';
 import { CustomerService } from './services/customer-service/customer.service';
@@ -43,6 +44,7 @@ import { ApplicationComponent } from './application/application.component';
     AppRoutingModule
   ],
   providers: [
+    ApplicantService,
     SessionService,
     DeviceService,
     RepairDetailService,

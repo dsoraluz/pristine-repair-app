@@ -1,0 +1,26 @@
+
+#application-form input {
+  margin-top: 15px;
+}
+
+#application-form {
+  padding-left: 37%;
+}
+
+#submit-application-button {
+  padding: 15px;
+  margin: 15px;
+  color: white;
+  background-color: navy;
+  border-radius: 7px;
+
+  font-size: 20px;
+  width: 500px;
+  float:left;
+  clear: both;
+  margin-top: 50px;
+  /*margin-left: 37%;*/
+
+
+
+}

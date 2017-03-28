@@ -1,4 +1,112 @@
 <app-nav-bar></app-nav-bar>
-<p>
-  application works!
-</p>
+
+<div *ngIf="errorMessage">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="appSubmitted">
+  <h1> Thank you for your application!</h1>
+  <h3> Well will reach out to you soon.</h3>
+</div>
+
+<div *ngIf="appSubmitted === false">
+  <div id="application-form">
+    <form (ngSubmit)="submitApplication(firstName,lastName, phone, email, address, addressLine2, city, state, market, zipCode, country, background, workInUs, over18, bestContactTime, transportation, ableToStart, pastExperience, experienceDescription, numberOfPhonesDone, numberOfTabletsDone, formalTraining, referredBy)" #myForm="ngForm">
+      <h1>Join Our Team! </h1>
+      <div>
+        <label for="firstName">First Name *</label>
+        <input type="text" name="firstName" [(ngModel)]="firstName" required />
+      </div>
+      <div>
+        <label for="lastName">Last Name *</label>
+        <input type="text" name="lastName" [(ngModel)]="lastName" required />
+      </div>
+      <div>
+        <label for="phone">Phone Number *</label>
+        <input type="text" name="phone" [(ngModel)]="phone" required />
+      </div>
+      <div>
+        <label for="email">Email *</label>
+        <input type="text" name="email" [(ngModel)]="email" required />
+      </div>
+      <div>
+        <label for="address">Address *</label>
+        <input type="text" name="address" [(ngModel)]="address" required />
+      </div>
+      <div>
+        <label for="addressLine2">Address Line 2 *</label>
+        <input type="text" name="addressLine2" [(ngModel)]="addressLine2" />
+      </div>
+      <div>
+        <label for="ciry">City *</label>
+        <input type="text" name="city" [(ngModel)]="city" required />
+      </div>
+      <div>
+        <label for="state">State *</label>
+        <input type="text" name="state" [(ngModel)]="state" required />
+      </div>
+      <div>
+        <label for="market">Market *</label>
+        <input type="text" name="market" [(ngModel)]="market" required />
+      </div>
+      <div>
+        <label for="zipCode">Postal / Zip Code *</label>
+        <input type="text" name="zipCode" [(ngModel)]="zipCode" required />
+      </div>
+      <div>
+        <label for="country">Country *</label>
+        <input type="text" name="country" [(ngModel)]="country" required />
+      </div>
+      <div>
+        <label for="background">Would you pass a background check? *</label>
+        <input type="text" name="background" [(ngModel)]="background" required />
+      </div>
+      <div>
+        <label for="workInUs">Are you authorized to work in the US? *</label>
+        <input type="text" name="workInUs" [(ngModel)]="workInUs" required />
+      </div>
+      <div>
+        <label for="over18">Are you over 18? *</label>
+        <input type="text" name="over18" [(ngModel)]="over18" required />
+      </div>
+      <div>
+        <label for="bestContactTime">What is the best time to contact you? *</label>
+        <input type="text" name="bestContactTime" [(ngModel)]="bestContactTime" required />
+      </div>
+      <div>
+        <label for="transportation">Pristine Wireless is entirely mobile in operation. Do you have access to reliable transportation? *</label>
+        <input type="text" name="transportation" [(ngModel)]="transportation" required />
+      </div>
+      <div>
+        <label for="abletToStart">Availibility to start: *</label>
+        <input type="text" name="ableToStart" [(ngModel)]="ableToStart" required />
+      </div>
+      <div>
+        <label for="pastExperience">Prior smart device repair experience *</label>
+        <input type="text" name="pastExperience" [(ngModel)]="pastExperience" required />
+      </div>
+      <div>
+        <label for="experienceDescription">Tell us about your past experience repairing phones/tablets? *</label>
+        <input type="textarea" name="experienceDescription" [(ngModel)]="experienceDescription" required />
+      </div>
+      <div>
+        <label for="numberOfPhonesDone">Number of smart phones previously repaired *</label>
+        <input type="text" name="numberOfPhonesDone" [(ngModel)]="numberOfPhonesDone" required />
+      </div>
+      <div>
+        <label for="numberOfTabletsDone">Number of tablets previously repaired</label>
+        <input type="text" name="numberOfTabletsDone" [(ngModel)]="numberOfTabletsDone" />
+      </div>
+      <div>
+        <label for="formalTraining">Do you have any formal training or certification in repairing smart devices (this is not a formal requirement of the position)?</label>
+        <input type="textarea" name="formalTraining" [(ngModel)]="formalTraining" />
+      </div>
+      <div>
+        <label for="referredBy">How did you hear about Pristine Wireless? *</label>
+        <input type="text" name="referredBy" [(ngModel)]="referredBy" required />
+      </div>
+
+      <button id="submit-application-button" type="submit"> Submit Application </button>
+    </form>
+  </div>
+</div>
