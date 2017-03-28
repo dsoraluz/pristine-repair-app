@@ -21,6 +21,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FeaturedOnComponent } from './featured-on/featured-on.component';
+import { LoginComponent } from './login/login.component';
+import { ApplicationComponent } from './application/application.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { FeaturedOnComponent } from './featured-on/featured-on.component';
     LandingPageComponent,
     NavBarComponent,
     FooterComponent,
-    FeaturedOnComponent
+    FeaturedOnComponent,
+    LoginComponent,
+    ApplicationComponent
   ],
   imports: [
     BrowserModule,

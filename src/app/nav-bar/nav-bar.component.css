@@ -4,15 +4,29 @@
 
 #repair-button {
   margin-top: 1%;
-  margin-left: 37%;
+  margin-left: 25%;
   background-color: green;
-  width: 300px;
+  width: 150px;
   padding: 15px;
   border-radius: 8px;
   border-color: green;
   color: white;
   font-size: 20px;
+  float: left;
 
+}
+
+#join-us-button {
+  margin-top: 1%;
+  margin-right: 25%;
+  background-color: var(--logo-blue);
+  width: 150px;
+  padding: 15px;
+  border-radius: 8px;
+  border-color: green;
+  color: white;
+  font-size: 20px;
+  float: right;
 }
 
 #login {
@@ -27,7 +41,7 @@
 }
 
 #phone-number {
-  color: white;
+  color: green;
   font-size: 30px;
   margin-left: 1%;
 }
