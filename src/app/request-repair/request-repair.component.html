@@ -1,21 +1,28 @@
 <app-nav-bar></app-nav-bar>
 
-<div class="request-progress">
+<div id="request-steps">
   <div class="row">
     <div id="request-info" class="col-4">
+      <div class="request-step">
+        1
+      </div>
       Device: <strong><span  id="request-info">{{ deviceName }} </span></strong>
       <strong><span id="request-info">{{ model}}</span></strong>
       Color: <strong><span id="request-info">{{ color }} </span></strong>
-      <a [routerLink] = "['repair']"> Edit </a>
     </div>
 
     <div id="request-info" class="col-4">
+      <div class="request-step">
+        2
+      </div>
       Issue: <strong><span id="request-info">{{ repairType }} </span></strong>
       Cost: <strong><span id="request-info">${{ repairCost }} </span></strong>
-      <a [routerLink] = "['repair']"> Edit </a>
     </div>
 
     <div id="request-info" class="col-3">
+      <div class="request-step">
+        3
+      </div>
       When: <strong><span id="request-info">{{ requestedDate | date : "MMM d," }} {{ requestedTime }} </span></strong>
     </div>
 
@@ -167,8 +174,8 @@
 
       </div>
       <div class="col-6">
-        <form (ngSubmit)="submitRequest(county, area, name, email, phone)" #myForm="ngForm">
-          <div id="location-form">
+        <form id="form" (ngSubmit)="submitRequest(county, area, name, email, phone)" #myForm="ngForm">
+          <div class="location-form">
             <h1>Location </h1>
             <div>
               <!-- <select [(ngModel)]="county">
@@ -185,7 +192,7 @@
             </div>
 
           </div>
-          <div id="contact-form">
+          <div class="contact-form">
             <h1>Contact Info</h1>
             <div>
               <label for="name">Name *</label>
@@ -200,7 +207,7 @@
               <input type="text" name="phone" [(ngModel)]="phone" required />
             </div>
           </div>
-          <button id="submit-request-button" type="submit"> Confirm Location and Contact Info </button>
+          <button class="submit-request-button" type="submit"> Confirm Location and Contact Info </button>
         </form>
       </div>
       <div class="col-2">

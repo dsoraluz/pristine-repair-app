@@ -3,6 +3,12 @@
   background-color: lightgrey;
   height: 300px;
 }
+#featured-on img {
+  padding-top: 15%;
+  width: 50%;
+  height: 50%;
+  float: left;
+}
 
 hr {
   width: 60%;

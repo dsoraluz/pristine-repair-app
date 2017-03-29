@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 *{
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -9,10 +9,21 @@
 
 :root {
   --logo-blue: #11ABD8;
-  --logo-green: #89C23E ;
+  --logo-green: #89C23E;
+  --gold: #ECDDCB;
+  --silver: #E9EBEA;
+  --rose-gold: #E9CEC7;
+  --jetblack: #000;
+  --space-gray: #242B30;
+  --white: #E9EBEA;
+  --black: #000;
+  --blue: #4CBDE7;
+  --green: #A2EF70;
+  --pink: #FC6D6D;
+  --yellow: #FFFF82;
+
+
 }
-
-
 
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}

@@ -17,9 +17,9 @@ import { TechService } from './services/tech-service/tech.service';
 import { KeysPipe } from './pipes/keys.pipe';
 
 //-------------- COMPONENTS --------------------------------------------
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { RequestRepairComponent } from './request-repair/request-repair.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FeaturedOnComponent } from './featured-on/featured-on.component';
 import { LoginComponent } from './login/login.component';
@@ -39,8 +39,8 @@ import { ApplicationComponent } from './application/application.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [
