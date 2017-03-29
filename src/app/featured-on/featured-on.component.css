@@ -1,4 +1,11 @@
 #featured-on {
+  text-align: center;
   background-color: lightgrey;
   height: 300px;
+}
+
+hr {
+  width: 60%;
+  margin-left: 20%;
+  border-color: black;
 }

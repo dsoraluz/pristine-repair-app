@@ -1,53 +1,37 @@
-#logo img {
-  width: 100%;
+.navbar-default {
+  margin-bottom: 0;
+  border: none;
 }
 
-#repair-button {
-  margin-top: 1%;
-  margin-left: 25%;
-  background-color: green;
-  width: 150px;
-  padding: 15px;
-  border-radius: 8px;
-  border-color: green;
-  color: white;
-  font-size: 20px;
-  float: left;
 
+.navbar-default {
+  border-radius: 0;
+  background: #000 !important;
+}
+.main-nav img {
+  width: 422px;
+  position: relative;
+  top: -20px;
+}
+.main-nav  a {
+  color: #fff !important;
+  margin: 20px 10px;
 }
 
-#join-us-button {
-  margin-top: 1%;
-  margin-right: 25%;
-  background-color: var(--logo-blue);
-  width: 150px;
-  padding: 15px;
-  border-radius: 8px;
-  border-color: green;
-  color: white;
-  font-size: 20px;
-  float: right;
+
+.btn-success {
+  padding: 15px 26px;
+}
+.btn-success:hover {
+  background-color: #4cae4c;
+  border-color: #4cae4c;
 }
 
-#login {
-  margin-top: 1%;
-  margin-left: 15%;
-  background-color: var(--logo-blue);
-  padding: 15px;
-  border-radius: 8px;
-  border-color: green;
-  color: white;
-  font-size: 30px;
+.btn-primary:hover {
+  background-color: #2e6da4;
+  border-color: #2e6da4;
 }
 
-#phone-number {
-  color: green;
-  font-size: 30px;
-  margin-left: 1%;
-}
-
-.header {
-  background-color: black;
-  border-color: red;
-  height: 80px;
+.container {
+  width: 80% !important;
 }

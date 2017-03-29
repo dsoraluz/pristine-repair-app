@@ -1,17 +1,39 @@
-<header>
+<!-- <header>
   <div class="row">
     <div class="header">
-      <div id="logo" class="header logo col-3">
+      <div id="logo" class="header logo col-4">
         <a [routerLink]="['/']"><img src="./assets/images/pristine-wireless-logo.png" /></a>
       </div>
-      <div class="header col-5">
+      <div class="header col-4">
         <a [routerLink] = "['repair']"><button id="repair-button" >Repair</button></a>
         <a [routerLink] = "['apply']"><button id="join-us-button" >Join Us</button></a>
       </div>
-      <div class=" header col-3">
+      <div class=" header col-4">
           <span id="phone-number">(954) 633-5010</span>
           <a [routerLink] = "['login']"><button id="login">Tech Login</button></a>
       </div>
     </div>
 </div>
-</header>
+</header> -->
+
+<nav class="navbar navbar-default main-nav">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" routerLink="/"><img src="../../assets/images/pristine-wireless-logo.png" alt=""></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a>(954) 633-5010  </a></li>
+            <li><a routerLink="/apply"> Join us </a></li>
+            <li><a routerLink="/repair" class="btn btn-success">Repair</a></li>
+            <li><a routerLink="/login"class="btn btn-primary">Tech Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
