@@ -132,8 +132,11 @@
 
     </div>
     <div class="col-6">
-      <div class="selection-list" *ngFor="let oneRepairType of repairTypes.repairType">
-        <button (click)="selectDate(oneRepairType)"> {{oneRepairType}} </button>
+      <div class="selection-list" *ngFor="let oneRepairType of repairTypes; let i=index">
+        <button class="repair-item" data-index="i" (click)="selectDate(oneRepairType, i)"> {{oneRepairType}}</button>
+      </div>
+      <div>
+        <span *ngFor="let oneCost of repairCosts.repairCost"> {{oneCost}</span>
       </div>
     </div>
     <div class="col-2">
@@ -205,11 +208,25 @@
           <div class="location-form">
             <h1>Location </h1>
             <div>
-              <!-- <select [(ngModel)]="county">
-                <option value=""></option>
-                <option value="Broward"></option>
-                <option value="Miami"></option>
+              <!-- <select>
+                <option *ngFor="let county of counties" value= {{county}}>
+                  {{county}}
+                </option>
               </select> -->
+
+              <!-- <select *ngIf="ng-county === 'Broward'">
+                <option *ngFor="let area of browardAreas" value= {{area}} [(ngModel)]="area">
+                  {{area}}
+                </option>
+              </select>
+
+              <select *ngIf="ng-county === 'Miami-Dade'">
+                <option *ngFor="let area of miamiAreas" value= {{area}} [(ngModel)]="area">
+                  {{area}}
+                </option>
+              </select> -->
+
+
               <label for="county">County <span class="required">*</span></label>
               <input type="dropdown" name="county" [(ngModel)]="county" required />
             </div>
