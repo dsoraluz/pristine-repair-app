@@ -5,7 +5,9 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ApplicantService {
 
-  BASE_URL = "http://localhost:3000";
+  // BASE_URL = "http://localhost:3000";
+  BASE_URL = "";
+
 
   constructor(private myHttp: Http) { }
 

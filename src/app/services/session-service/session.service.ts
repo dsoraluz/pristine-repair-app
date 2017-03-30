@@ -8,7 +8,9 @@ export class SessionService {
 
   constructor(private myHttp: Http) { }
 
-  BASE_URL: string = 'http://localhost:3000/api';
+  // BASE_URL: string = 'http://localhost:3000/api';
+  BASE_URL = "http://localhost:3000";
+
 
   createTechLogin (techLogin){
     return this.myHttp.post(`${this.BASE_URL}/create-tech-login`, techLogin)
