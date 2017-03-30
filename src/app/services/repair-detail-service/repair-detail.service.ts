@@ -6,7 +6,11 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class RepairDetailService {
-  BASE_URL: string = 'http://localhost:3000';
+  //------------ FOR DEVELOPMENT (UNCOMMENT) --------------------
+
+  // BASE_URL: string = 'http://localhost:3000';
+  BASE_URL: string = '';
+
 
   constructor(private myHttp: Http) { }
 
