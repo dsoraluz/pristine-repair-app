@@ -25,22 +25,59 @@ button {
 }
 
 .gold {
-
+  background-color: var(--gold);
+  color: var(--black);
 }
 
 .silver {
-
+  background-color: var(--silver);
+  color: var(--black);
 }
 
 .rose-gold {
-
+  background-color: var(--rose-gold);
+  color: var(--black);
 }
 
-.black {}
+.black {
+  background-color: var(--black);
+  color: #fff;
+}
 
-.jet-black{}
+.jet-black{
+  background-color: var(--jet-black);
+  color: #fff;
+}
 
-.space-gray {}
+.space-gray {
+  background-color: var(--space-gray);
+  color: #fff;
+}
+
+.white{
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.blue{
+  background-color: var(--blue);
+  color: var(--black);
+}
+
+.green{
+  background-color: var(--green);
+  color: var(--black);
+}
+
+.pink{
+  background-color: var(--pink);
+  color: var(--black);
+}
+
+.yellow{
+  background-color: var(--yellow);
+  color: var(--black);
+}
 
 #request-info {
   text-align: center;
@@ -64,7 +101,7 @@ button {
 
 
 div[id*="progress"] {
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 
 #progress-bar-complete-25, #progress-bar-complete-50, #progress-bar-complete-75 , #progress-bar-complete-100 {
@@ -87,12 +124,13 @@ div[id*="progress"] {
 }
 
 
-#form {
+.location-form{
   margin: 30px auto;
-  width: 50%;
+  width: 25%;
+  float: left;
 }
 
-#form label {
+.location-form label {
   color: #666;
   display: inline-block;
   margin-bottom: 10px;
@@ -100,8 +138,8 @@ div[id*="progress"] {
   width: 100%;
 }
 
-#form input,
-#form button {
+.location-form input,
+.location-form button {
   box-sizing: border-box;
   margin-bottom: 10px;
   font-size: 14px;
@@ -110,7 +148,7 @@ div[id*="progress"] {
   width: 100%;
 }
 
-#form button {
+.location-form button {
   background: #43a3e6;
   border: 1px solid #43a3e6;
   border-radius: 4px;
@@ -125,7 +163,52 @@ div[id*="progress"] {
   width: 100%;
 }
 
-#form button:hover {
+.location-form button:hover {
+  background: #5CB85C;
+  color: #fff;
+  transition: .3s ease background;
+}
+
+.contact-form{
+  margin: 30px auto;
+  width: 50%;
+  float: right;
+}
+
+.contact-form label {
+  color: #666;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.contact-form input,
+.contact-form button {
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-size: 14px;
+  outline: 0;
+  padding: 4px;
+  width: 100%;
+}
+
+.contact-form button {
+  background: #43a3e6;
+  border: 1px solid #43a3e6;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .3s ease background;
+  width: 100%;
+}
+
+.contact-form button:hover {
   background: #5CB85C;
   color: #fff;
   transition: .3s ease background;
@@ -133,21 +216,21 @@ div[id*="progress"] {
 
 
 
-.location-form {
+/*.location-form {
   margin-left: 20%;
   float: left;
-}
+}*/
 
-.contact-form {
+/*.contact-form {
   margin-right: 20%;
   float: right;
-}
+}*/
 
 .submit-request-button {
   font-size: 20px;
   width: 100%;
   float:left;
   clear: both;
-  margin-top: 50px;
-  margin-left: 25%;
+  margin-top: 25px;
+  margin-left: 0;
 }

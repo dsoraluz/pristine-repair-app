@@ -17,11 +17,10 @@ export class SessionService {
   }
 
   login (credentials){
-    const options = { withCredentials: true };
+    // const options = { withCredentials: true };
     console.log(credentials);
-    return this.myHttp.post(`${this.BASE_URL}/login`, credentials, options)
+    return this.myHttp.post(`${this.BASE_URL}/login`, credentials)
     .toPromise()
-    .catch()
     .then(result => result.json());
   }
 

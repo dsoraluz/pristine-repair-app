@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+body,html {
+  overflow-x: hidden;
+  padding: 50px 0
+}
 
 
 :root {
@@ -13,7 +17,7 @@
   --gold: #ECDDCB;
   --silver: #E9EBEA;
   --rose-gold: #E9CEC7;
-  --jetblack: #000;
+  --jet-black: #000;
   --space-gray: #242B30;
   --white: #E9EBEA;
   --black: #000;
@@ -23,6 +27,10 @@
   --yellow: #FFFF82;
 
 
+}
+
+.required {
+  color: red;
 }
 
 .col-1 {width: 8.33%;}

@@ -6,24 +6,41 @@
       <div class="request-step">
         1
       </div>
-      Device: <strong><span  id="request-info">{{ deviceName }} </span></strong>
-      <strong><span id="request-info">{{ model}}</span></strong>
-      Color: <strong><span id="request-info">{{ color }} </span></strong>
+      <div>
+        Your Device
+      </div>
+      <div>
+        <strong><span  id="request-info">{{ deviceName }} </span></strong>
+        <strong><span id="request-info">{{ model}}</span></strong>
+        <strong><span id="request-info">{{ color }} </span></strong>
+
+      </div>
     </div>
 
     <div id="request-info" class="col-4">
       <div class="request-step">
         2
       </div>
-      Issue: <strong><span id="request-info">{{ repairType }} </span></strong>
-      Cost: <strong><span id="request-info">${{ repairCost }} </span></strong>
+      <div>
+        Issue
+      </div>
+      <div>
+        <strong><span id="request-info">{{ repairType }} </span></strong>
+        Cost: <strong><span id="request-info">${{ repairCost }} </span></strong>
+
+      </div>
     </div>
 
     <div id="request-info" class="col-3">
       <div class="request-step">
         3
       </div>
-      When: <strong><span id="request-info">{{ requestedDate | date : "MMM d," }} {{ requestedTime }} </span></strong>
+      <div>
+        Tell Us When
+      </div>
+      <div>
+        <strong><span id="request-info">{{ requestedDate | date : "MMM d," }} {{ requestedTime }} </span></strong>
+      </div>
     </div>
 
   </div>
@@ -84,7 +101,17 @@
     </div>
     <div class="col-6">
       <div class="selection-list" *ngFor="let oneColor of colors">
-        <button (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+        <button *ngIf="oneColor === 'Gold'" class="gold" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+        <button *ngIf="oneColor === 'Silver'" class="silver" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+        <button *ngIf="oneColor === 'Rose Gold'" class="rose-gold" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+        <button *ngIf="oneColor === 'Black'" class="black" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+        <button *ngIf="oneColor === 'Jet Black'" class="jet-black" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+        <button *ngIf="oneColor === 'Space Gray'" class="space-gray" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+        <button *ngIf="oneColor === 'White'" class="white" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+        <button *ngIf="oneColor === 'Blue'" class="blue" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+        <button *ngIf="oneColor === 'Green'" class="green" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+        <button *ngIf="oneColor === 'Pink'" class="pink" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
+        <button *ngIf="oneColor === 'Yellow'" class="yellow" (click)="getRepairType(oneColor)"> {{ oneColor }}</button>
       </div>
   </div>
   <div class="col-2">
@@ -174,7 +201,7 @@
 
       </div>
       <div class="col-6">
-        <form id="form" (ngSubmit)="submitRequest(county, area, name, email, phone)" #myForm="ngForm">
+        <form (ngSubmit)="submitRequest(county, area, name, email, phone)" #myForm="ngForm">
           <div class="location-form">
             <h1>Location </h1>
             <div>
@@ -183,11 +210,11 @@
                 <option value="Broward"></option>
                 <option value="Miami"></option>
               </select> -->
-              <label for="county">County *</label>
+              <label for="county">County <span class="required">*</span></label>
               <input type="dropdown" name="county" [(ngModel)]="county" required />
             </div>
             <div>
-              <label for="area">Area *</label>
+              <label for="area">Area <span class="required">*</span></label>
               <input type="dropdown" name="area" [(ngModel)]="area" required />
             </div>
 
@@ -195,15 +222,15 @@
           <div class="contact-form">
             <h1>Contact Info</h1>
             <div>
-              <label for="name">Name *</label>
+              <label for="name">Name <span class="required">*</span></label>
               <input type="text" name="name" [(ngModel)]="name" required />
             </div>
             <div>
-              <label for="email">Email *</label>
+              <label for="email">Email <span class="required">*</span></label>
               <input type="text" name="email" [(ngModel)]="email" required />
             </div>
             <div>
-              <label for="phone">Phone *</label>
+              <label for="phone">Phone <span class="required">*</span></label>
               <input type="text" name="phone" [(ngModel)]="phone" required />
             </div>
           </div>
