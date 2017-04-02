@@ -11,99 +11,99 @@
 
 <div *ngIf="appSubmitted === false">
   <div id="application-form">
-    <form (ngSubmit)="submitApplication(firstName,lastName, phone, email, address, addressLine2, city, state, market, zipCode, country, background, workInUs, over18, bestContactTime, transportation, ableToStart, pastExperience, experienceDescription, numberOfPhonesDone, numberOfTabletsDone, formalTraining, referredBy)" #myForm="ngForm">
+    <form (ngSubmit)="submitApplication()" #myForm="ngForm">
       <h1>Join Our Team! </h1>
       <div>
         <label for="firstName">First Name <span class="required">*</span></label>
-        <input type="text" name="firstName" [(ngModel)]="firstName" required />
+        <input type="text" name="firstName" [(ngModel)]="applicationInfo.firstName" required />
       </div>
       <div>
         <label for="lastName">Last Name <span class="required">*</span></label>
-        <input type="text" name="lastName" [(ngModel)]="lastName" required />
+        <input type="text" name="lastName" [(ngModel)]="applicationInfo.lastName" required />
       </div>
       <div>
         <label for="phone">Phone Number <span class="required">*</span></label>
-        <input type="text" name="phone" [(ngModel)]="phone" required />
+        <input type="text" name="phone" [(ngModel)]="applicationInfo.phone" required />
       </div>
       <div>
         <label for="email">Email <span class="required">*</span></label>
-        <input type="text" name="email" [(ngModel)]="email" required />
+        <input type="text" name="email" [(ngModel)]="applicationInfo.email" required />
       </div>
       <div>
         <label for="address">Address <span class="required">*</span></label>
-        <input type="text" name="address" [(ngModel)]="address" required />
+        <input type="text" name="address" [(ngModel)]="applicationInfo.address" required />
       </div>
       <div>
         <label for="addressLine2">Address Line 2 <span class="required">*</span></label>
-        <input type="text" name="addressLine2" [(ngModel)]="addressLine2" />
+        <input type="text" name="addressLine2" [(ngModel)]="applicationInfo.addressLine2" />
       </div>
       <div>
         <label for="ciry">City <span class="required">*</span></label>
-        <input type="text" name="city" [(ngModel)]="city" required />
+        <input type="text" name="city" [(ngModel)]="applicationInfo.city" required />
       </div>
       <div>
         <label for="state">State <span class="required">*</span></label>
-        <input type="text" name="state" [(ngModel)]="state" required />
+        <input type="text" name="state" [(ngModel)]="applicationInfo.state" required />
       </div>
       <div>
         <label for="market">Market <span class="required">*</span></label>
-        <input type="text" name="market" [(ngModel)]="market" required />
+        <input type="text" name="market" [(ngModel)]="applicationInfo.market" required />
       </div>
       <div>
         <label for="zipCode">Postal / Zip Code <span class="required">*</span></label>
-        <input type="text" name="zipCode" [(ngModel)]="zipCode" required />
+        <input type="text" name="zipCode" [(ngModel)]="applicationInfo.zipCode" required />
       </div>
       <div>
         <label for="country">Country <span class="required">*</span></label>
-        <input type="text" name="country" [(ngModel)]="country" required />
+        <input type="text" name="country" [(ngModel)]="applicationInfo.country" required />
       </div>
       <div>
         <label for="background">Would you pass a background check? <span class="required">*</span></label>
-        <input type="text" name="background" [(ngModel)]="background" required />
+        <input type="text" name="background" [(ngModel)]="applicationInfo.background" required />
       </div>
       <div>
         <label for="workInUs">Are you authorized to work in the US? <span class="required">*</span></label>
-        <input type="text" name="workInUs" [(ngModel)]="workInUs" required />
+        <input type="text" name="workInUs" [(ngModel)]="applicationInfo.workInUs" required />
       </div>
       <div>
         <label for="over18">Are you over 18? <span class="required">*</span></label>
-        <input type="text" name="over18" [(ngModel)]="over18" required />
+        <input type="text" name="over18" [(ngModel)]="applicationInfo.over18" required />
       </div>
       <div>
         <label for="bestContactTime">What is the best time to contact you? <span class="required">*</span></label>
-        <input type="text" name="bestContactTime" [(ngModel)]="bestContactTime" required />
+        <input type="text" name="bestContactTime" [(ngModel)]="applicationInfo.bestContactTime" required />
       </div>
       <div>
         <label for="transportation">Pristine Wireless is entirely mobile in operation. Do you have access to reliable transportation? <span class="required">*</span></label>
-        <input type="text" name="transportation" [(ngModel)]="transportation" required />
+        <input type="text" name="transportation" [(ngModel)]="applicationInfo.transportation" required />
       </div>
       <div>
         <label for="abletToStart">Availibility to start: <span class="required">*</span></label>
-        <input type="text" name="ableToStart" [(ngModel)]="ableToStart" required />
+        <input type="text" name="ableToStart" [(ngModel)]="applicationInfo.ableToStart" required />
       </div>
       <div>
         <label for="pastExperience">Prior smart device repair experience <span class="required">*</span></label>
-        <input type="text" name="pastExperience" [(ngModel)]="pastExperience" required />
+        <input type="text" name="pastExperience" [(ngModel)]="applicationInfo.pastExperience" required />
       </div>
       <div>
         <label for="experienceDescription">Tell us about your past experience repairing phones/tablets? <span class="required">*</span></label>
-        <input type="textarea" name="experienceDescription" [(ngModel)]="experienceDescription" required />
+        <input type="textarea" name="experienceDescription" [(ngModel)]="applicationInfo.experienceDescription" required />
       </div>
       <div>
         <label for="numberOfPhonesDone">Number of smart phones previously repaired <span class="required">*</span></label>
-        <input type="text" name="numberOfPhonesDone" [(ngModel)]="numberOfPhonesDone" required />
+        <input type="text" name="numberOfPhonesDone" [(ngModel)]="applicationInfo.numberOfPhonesDone" required />
       </div>
       <div>
         <label for="numberOfTabletsDone">Number of tablets previously repaired</label>
-        <input type="text" name="numberOfTabletsDone" [(ngModel)]="numberOfTabletsDone" />
+        <input type="text" name="numberOfTabletsDone" [(ngModel)]="applicationInfo.numberOfTabletsDone" />
       </div>
       <div>
         <label for="formalTraining">Do you have any formal training or certification in repairing smart devices (this is not a formal requirement of the position)?</label>
-        <input type="textarea" name="formalTraining" [(ngModel)]="formalTraining" />
+        <input type="textarea" name="formalTraining" [(ngModel)]="applicationInfo.formalTraining" />
       </div>
       <div>
         <label for="referredBy">How did you hear about Pristine Wireless? <span class="required">*</span></label>
-        <input type="text" name="referredBy" [(ngModel)]="referredBy" required />
+        <input type="text" name="referredBy" [(ngModel)]="applicationInfo.referredBy" required />
       </div>
 
       <button id="submit-application-button" type="submit"> Submit Application </button>
